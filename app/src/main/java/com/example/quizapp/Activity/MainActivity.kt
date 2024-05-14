@@ -1,5 +1,6 @@
 package com.example.quizapp.Activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
@@ -17,5 +18,15 @@ class MainActivity : AppCompatActivity() {
         val window: Window = this@MainActivity.window
         window.statusBarColor = ContextCompat.getColor(this@MainActivity, R.color.grey)
 
+
+        binding.apply {
+            bottomNav.selectedItemId = R.id.home
+            bottomNav.setOnItemSelectedListener {
+                if (it.itemId == R.id.board) {
+                    startActivity(Intent(this@MainActivity, LeaderActivity::class.java))
+                }
+                true
+            }
+        }
     }
 }

@@ -42,7 +42,7 @@ class LeaderAdapter : RecyclerView.Adapter<LeaderAdapter.ViewHolder>() {
     inner class ViewHolder: RecyclerView.ViewHolder(binding.root)
 
     private val differCallback = object : DiffUtil.ItemCallback<UserModel>() {
-        override fun areItemsTheSame(oldItem: UserModel, newItem: UserModel): Boolean {
+        override fun areItemsTheSame(oldItem :UserModel, newItem: UserModel): Boolean {
             return oldItem.id == newItem.id
         }
 
